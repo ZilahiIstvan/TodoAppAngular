@@ -1,14 +1,17 @@
 <div class="main_bg">
   <img
     class="main_bg_upper_part"
-    src="../assets/imgs/bg-desktop-dark.jpg"
+    src="/assets/imgs/bg-desktop-dark.jpg"
     alt=""
   />
-  <div class="main_bg_lower_part">fewf</div>
+  <div class="main_bg_lower_part"></div>
   <div class="app">
     <div class="app_title">TODO</div>
     <div class="app_input_cont">
-      <div class="app_circle"></div>
+      <div
+        class="app_circle"
+        [ngClass]="{ app_circle_focused: inputFocused }"
+      ></div>
       <input
         #inputTagValue
         (input)="inputChanged(inputTagValue.value)"
@@ -16,10 +19,12 @@
         placeholder="Create a new todo..."
         [value]="inputValue"
         (keydown)="inputOnKeyDown($event)"
+        (focus)="handleOnFocus()"
+        (blur)="handleOnBlur()"
       />
     </div>
     <div class="app_task_cont">
-      <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+      <app-task *ngFor="let task of tasks" [task]="task" cdkDrag></app-task>
       <div class="app_task_menu_cont">
         <div class="app_task_menu_item_cnt">
           {{ counter }} {{ counter > 1 ? "items" : "item" }}
@@ -52,5 +57,6 @@
         </div>
       </div>
     </div>
+    <div class="app_drag_and_drop">Drag and drop to reorder list</div>
   </div>
 </div>

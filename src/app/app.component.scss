@@ -2,10 +2,13 @@
 
 .main_bg {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   &_lower_part {
     background-color: $veryDarkBlue;
-    height: 50vh;
+    flex: 1 1 10px;
   }
 
   &_upper_part {
@@ -46,6 +49,10 @@
     width: 22px;
     margin: 0 1rem;
     flex: 0 0 22px;
+
+    &_focused {
+      background-color: $BrightBlue;
+    }
   }
 
   &_new_task {
@@ -67,6 +74,7 @@
     &_cont {
       border-radius: 5px;
       overflow: hidden;
+      margin-bottom: 3rem;
     }
 
     &_menu {
@@ -94,5 +102,11 @@
         color: $BrightBlue;
       }
     }
+  }
+
+  &_drag_and_drop {
+    color: $veryDarkGrayishBlueLighter;
+    font-weight: bold;
+    text-align: center;
   }
 }

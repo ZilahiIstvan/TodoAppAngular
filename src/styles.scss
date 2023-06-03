@@ -4,3 +4,13 @@
   box-sizing: border-box;
   font-family: "Public Sans", sans-serif;
 }
+
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+app-root {
+  display: block;
+}

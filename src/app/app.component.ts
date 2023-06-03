@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+/*
+import {
+  CdkDragDrop,
+  CdkDropList,
+  CdkDrag,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+*/
 
 @Component({
   selector: 'app-root',
@@ -15,6 +23,7 @@ export class AppComponent {
   inputValue: string = '';
   selectorState: number = 0; // 0 - All, 1 - Active, 2 - Completed
   counter: number = this.tasks.length;
+  inputFocused: boolean = false;
 
   // INPUT FIELD
   // handle change in input field
@@ -28,6 +37,14 @@ export class AppComponent {
       this.tasks.push({ state: false, text: this.inputValue });
       this.inputValue = '';
     }
+  }
+
+  handleOnFocus() {
+    this.inputFocused = true;
+  }
+
+  handleOnBlur() {
+    this.inputFocused = false;
   }
 
   // MENU FUNCTIONS
