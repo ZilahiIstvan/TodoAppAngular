@@ -1,0 +1,98 @@
+@import "../assets/variables/style_variables.scss";
+
+.main_bg {
+  position: relative;
+
+  &_lower_part {
+    background-color: $veryDarkBlue;
+    height: 50vh;
+  }
+
+  &_upper_part {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.app {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  width: 30%;
+
+  &_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    color: $lightGrayishBlueHover;
+    margin-bottom: 1.5rem;
+  }
+
+  &_input_cont {
+    display: flex;
+    background-color: $veryDarkDesaturatedBlue;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &_circle {
+    border-radius: 50%;
+    border: 2px solid $veryDarkGrayishBlue;
+    height: 22px;
+    width: 22px;
+    margin: 0 1rem;
+    flex: 0 0 22px;
+  }
+
+  &_new_task {
+    padding: 1rem 1rem 1rem 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    background-color: transparent;
+    flex: 1;
+    font-size: 1.1rem;
+    color: $darkGrayishBlue;
+
+    &::placeholder {
+      color: $darkGrayishBlue;
+    }
+  }
+
+  &_task {
+    &_cont {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    &_menu {
+      &_cont {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $veryDarkDesaturatedBlue;
+        padding: 0.8rem 0;
+        color: $veryDarkGrayishBlueLighter;
+        font-weight: bold;
+      }
+
+      &_selector_cont {
+        display: flex;
+        gap: 1rem;
+        cursor: pointer;
+      }
+
+      &_clear {
+        cursor: pointer;
+      }
+
+      &_selected {
+        color: $BrightBlue;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div>
+  <div class="app_task_cont" (click)="taskClickEvent()">
+    <div
+      class="app_task_circle"
+      [ngClass]="{ app_task_circle_complete: task.state }"
+    ></div>
+    <div
+      class="app_task_text"
+      [ngClass]="{ app_task_text_complete: task.state }"
+    >
+      {{ task.text }}
+    </div>
+  </div>
+  <div class="app_task_line"></div>
+</div>
