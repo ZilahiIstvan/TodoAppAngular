@@ -25,7 +25,8 @@
     </div>
     <div class="app_task_cont">
       <app-task *ngFor="let task of tasks" [task]="task" cdkDrag></app-task>
-      <div class="app_task_menu_cont">
+
+      <div class="app_task_menu_cont app_task_menu_cont_desktop">
         <div class="app_task_menu_item_cnt">
           {{ counter }} {{ counter > 1 ? "items" : "item" }}
         </div>
@@ -55,6 +56,40 @@
         <div class="app_task_menu_clear" (click)="handleClearCompletedTasks()">
           Clear Completed
         </div>
+      </div>
+
+      <div class="app_task_menu_cont app_task_menu_cont_phone">
+        <div class="app_task_menu_item_cnt">
+          {{ counter }} {{ counter > 1 ? "items" : "item" }}
+        </div>
+        <div class="app_task_menu_clear" (click)="handleClearCompletedTasks()">
+          Clear Completed
+        </div>
+      </div>
+      <div
+        class="app_task_menu_selector_cont app_task_menu_selector_cont_phone"
+      >
+        <p
+          class="app_task_menu_all"
+          [ngClass]="{ app_task_menu_selected: selectorState == 0 }"
+          (click)="handleAllSelectorClick()"
+        >
+          All
+        </p>
+        <p
+          class="app_task_menu_active"
+          [ngClass]="{ app_task_menu_selected: selectorState == 1 }"
+          (click)="handleActiveSelectorClick()"
+        >
+          Active
+        </p>
+        <p
+          class="app_task_menu_completed"
+          [ngClass]="{ app_task_menu_selected: selectorState == 2 }"
+          (click)="handleCompletedSelectorClick()"
+        >
+          Completed
+        </p>
       </div>
     </div>
     <div class="app_drag_and_drop">Drag and drop to reorder list</div>

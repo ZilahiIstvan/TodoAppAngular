@@ -86,12 +86,27 @@
         padding: 0.8rem 0;
         color: $veryDarkGrayishBlueLighter;
         font-weight: bold;
+
+        &_phone {
+          border-radius: 5px;
+        }
       }
 
       &_selector_cont {
         display: flex;
         gap: 1rem;
         cursor: pointer;
+
+        &_phone {
+          background-color: $veryDarkDesaturatedBlue;
+          padding: 0.8rem 0;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1rem;
+          border-radius: 5px;
+          color: $veryDarkGrayishBlueLighter;
+          font-weight: bold;
+        }
       }
 
       &_clear {
@@ -101,6 +116,12 @@
       &_selected {
         color: $BrightBlue;
       }
+
+      &_active:hover,
+      &_all:hover,
+      &_completed:hover {
+        color: $BrightBlueHover;
+      }
     }
   }
 
@@ -108,5 +129,54 @@
     color: $veryDarkGrayishBlueLighter;
     font-weight: bold;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .app {
+    width: 40%;
+  }
+
+  .main_bg {
+    &_upper_part {
+      flex: 0.8 1 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .app {
+    width: 50%;
+  }
+
+  .main_bg {
+    &_upper_part {
+      flex: 0.8 1 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .app_task_menu_cont_desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .app_task_menu_cont_phone,
+  .app_task_menu_selector_cont_phone {
+    display: none;
   }
 }
